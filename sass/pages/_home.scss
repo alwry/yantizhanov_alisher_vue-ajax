@@ -1,0 +1,27 @@
+header {
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+body {
+    background-color: #fafafa;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.welcome-div {
+    height: 70vh;
+    background-image: url('../img/hero-img.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: 50px;
+    color: white;
+}
