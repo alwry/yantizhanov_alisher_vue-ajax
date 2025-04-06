@@ -10,22 +10,39 @@
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
-    <script type="module" src="js/main.js"></script>
+    <script defer src="js/main.js"></script>
+
+
 </head>
 <body>
     <header>
         <div class="grid-con">
-            <div class="header-logo col-span-2 t-col-span-1">
-                <object data="img/acorn-fill.svg" type="image/svg+xml"></object>
-            </div>
-            <div class="col-start-4 col-span-1 m-col-start-12 header-nav">
-                <object data="img/dots-three-outline-fill.svg" type="image/svg+xml"></object>
+            <div class="header-logo col-span-2 t-col-start-3 t-col-span-2">
+                <img src="img/fanshawe-logo.png" alt="fanshawe college logo">
             </div>
         </div>
     </header>
 
     <main>
+        <section id="app">
+            <div class="grid-con">
+                <h1 class="col-span-full">Student Directory</h1>
+                <h2 class="col-span-full">Select a student to view details!</h2>
+                <div v-if="isLoading" class="col-span-2 t-col-span-3 student-loader">Loading student list</div>
+                <ul v-else class="col-span-2 t-col-span-3 student-list">
+                    <li v-for="student in students" :key="student.id" @click="selectStudent(student.id)">
+                        {{ student.fname }} {{ student.lname }}
+                    </li>
+                </ul>
 
+                <div v-if="isDetailLoading" class="col-span-2 t-col-span-3 student-loader">Loading student's details</div>
+                <div v-if="selectedStudent" class="col-span-2 t-col-span-3 student-details">
+                    <h3>{{ selectedStudent.fname }} {{ selectedStudent.lname }}</h3>
+                    <p>Email: {{ selectedStudent.email }}</p>
+                    <p>Major: {{ selectedStudent.major }}</p>
+                </div>
+            </div>
+        </section>
     </main>
     <footer>
         <div class="grid-con">

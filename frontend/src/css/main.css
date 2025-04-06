@@ -15,6 +15,8 @@ h2 {
   font-weight: 700;
   font-size: 24px;
   margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 10px;
 }
 
 h3 {
@@ -25,6 +27,7 @@ h3 {
 p {
   font-weight: 300;
   font-size: 16px;
+  margin: 0;
 }
 
 .hidden {
@@ -86,7 +89,17 @@ header {
 }
 
 body {
-  background-color: #fafafa;
+  background-color: #fff;
+}
+
+.header-logo img {
+  max-width: 100px;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 h1 {
@@ -106,4 +119,10 @@ h1 {
   justify-content: end;
   padding: 50px;
   color: white;
+}
+
+footer {
+  margin-top: 100px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
 }
