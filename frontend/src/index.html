@@ -11,6 +11,7 @@
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script defer src="js/main.js"></script>
+    <script defer src="js/anim.js"></script>
 
 
 </head>
@@ -24,19 +25,26 @@
     </header>
 
     <main>
+        <section id="welcome">
+            <div class="grid-con">
+                <div class="col-span-full welcome-div">
+                    <h1>Welcome to the Student Directory</h1>
+                    <p>This is a simple Vue.js application that fetches student data from an API.</p>
+                </div>
+            </div>
+        </section>
         <section id="app">
             <div class="grid-con">
-                <h1 class="col-span-full">Student Directory</h1>
-                <h2 class="col-span-full">Select a student to view details!</h2>
+                <h2 class="col-span-full l-col-start-5 l-col-end-9">Select a student to view details!</h2>
                 <div v-if="isLoading" class="col-span-2 t-col-span-3 student-loader">Loading student list</div>
-                <ul v-else class="col-span-2 t-col-span-3 student-list">
+                <ul v-else class="col-span-full t-col-span-3 l-col-start-4 l-col-span-3 student-list">
                     <li v-for="student in students" :key="student.id" @click="selectStudent(student.id)">
                         {{ student.fname }} {{ student.lname }}
                     </li>
                 </ul>
 
-                <div v-if="isDetailLoading" class="col-span-2 t-col-span-3 student-loader">Loading student's details</div>
-                <div v-if="selectedStudent" class="col-span-2 t-col-span-3 student-details">
+                <div v-if="isDetailLoading" class="col-span-full t-col-start-5 t-col-span-3 student-loader">Loading student's details</div>
+                <div v-if="selectedStudent" class="col-span-full t-col-start-5 l-col-span-3 student-details">
                     <h3>{{ selectedStudent.fname }} {{ selectedStudent.lname }}</h3>
                     <p>Email: {{ selectedStudent.email }}</p>
                     <p>Major: {{ selectedStudent.major }}</p>
