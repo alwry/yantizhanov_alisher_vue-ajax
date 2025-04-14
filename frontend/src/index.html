@@ -49,6 +49,7 @@
                 <div v-if="isDetailLoading" class="col-span-full t-col-start-5 t-col-span-3 student-loader">Loading
                     student's details</div>
                 <div v-if="selectedStudent" class="col-span-full t-col-start-5 l-col-span-3 student-details">
+                    <img v-if="selectedStudent.media" :src="'img/' + selectedStudent.media.media_url" alt="Student photo" class="student-img"/>
                     <h3>{{ selectedStudent.fname }} {{ selectedStudent.lname }}</h3>
                     <p>Email: {{ selectedStudent.email }}</p>
                     <p>Major: {{ selectedStudent.major }}</p>

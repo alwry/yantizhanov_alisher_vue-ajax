@@ -4,13 +4,14 @@ Vue.js application that fetches student data from an API using Lumen backend.
 
 ## Description
 
-A simple Vue.js + Lumen web app that displays a list of students fetched from a custom API. Users can browse, search, and view detailed information about each student. Built as an intro project for connecting a Vue frontend to a Lumen backend. 
+A simple Vue.js + Lumen web app that displays a list of students fetched from a custom API. Users can browse and view detailed information about each student. Built as an intro project for connecting a Vue frontend to a Lumen backend. 
 
 
 ### Installing
 
 * Fork it!
 * Open in code editor
+* Change the URL in js/main.js according to your OS (Mac or Windows)
 * Run it!
 
 
