@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="initial-scale=1.0, width=device-width">
@@ -10,11 +11,13 @@
     <script defer src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@latest/bundled/lenis.min.js"></script>
     <script defer src="js/main.js"></script>
     <script defer src="js/anim.js"></script>
 
 
 </head>
+
 <body>
     <header>
         <div class="grid-con">
@@ -43,7 +46,8 @@
                     </li>
                 </ul>
 
-                <div v-if="isDetailLoading" class="col-span-full t-col-start-5 t-col-span-3 student-loader">Loading student's details</div>
+                <div v-if="isDetailLoading" class="col-span-full t-col-start-5 t-col-span-3 student-loader">Loading
+                    student's details</div>
                 <div v-if="selectedStudent" class="col-span-full t-col-start-5 l-col-span-3 student-details">
                     <h3>{{ selectedStudent.fname }} {{ selectedStudent.lname }}</h3>
                     <p>Email: {{ selectedStudent.email }}</p>
@@ -61,5 +65,18 @@
             </div>
         </div>
     </footer>
+    <script>
+        const lenis = new Lenis()
+        lenis.on('scroll', (e) => {
+            console.log(e)
+        })
+
+        function raf(time) {
+            lenis.raf(time)
+            requestAnimationFrame(raf)
+        }
+        requestAnimationFrame(raf)
+    </script>
 </body>
+
 </html>

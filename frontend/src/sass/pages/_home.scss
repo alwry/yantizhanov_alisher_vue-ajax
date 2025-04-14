@@ -8,6 +8,8 @@ body {
 }
 
 .header-logo img {
+    padding: 10px;
+    margin: 1em;
     max-width: 100px;
 }
 
@@ -66,6 +68,10 @@ h1 {
     border-radius: 5px;
 }
 
+.student-loader {
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 footer {
     margin-top: 100px;
