@@ -29,17 +29,24 @@ $router->get('/db-test', function () {
 use App\Models\Student;
 
 $router->get('/students', function () {
-    return response()->json(Student::orderBy('lname')->get());
+    return response()->json(
+        Student::with('media')->orderBy('lname')->get()
+    );
 });
 
 $router->get('/students/{id}', function ($id) {
-    $student = App\Models\Student::find($id);
+    $student = Student::with('media')->find($id);
 
     if (!$student) {
-        return response()->json(['message' => 'We dont have enough money for this amount of students, sorry'], 404);
+        return response()->json([
+            'message' => 'We dont have enough money for this amount of students, sorry'
+        ], 404);
     }
 
     return response()->json($student);
 });
+
+
+
 
 
